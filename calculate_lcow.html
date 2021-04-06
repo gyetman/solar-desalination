@@ -15,10 +15,8 @@
             var stec = parseInt(document.getElementById("STEC").value);
             var lifetime = parseInt(document.getElementById("Lifetime").value);  
             var interest = parseFloat(document.getElementById("Interest").value);
-
             var annualized_capex = capex*1000*interest/100*(1+interest/100)**lifetime/((1+interest/100)**lifetime-1)/(0.9*365*capacity);
             var lcow = annualized_capex+opex+lcoe*sec+lcoh*stec;
-
             var calc_capex = document.getElementById('calculated_capex');
             calc_capex.innerHTML = "$" + annualized_capex.toFixed(2) + "/m3";
             calc_lcow = document.getElementById('calculated_lcow');
@@ -53,7 +51,7 @@
       </form>
       <b>Unit Capex:</b> <span id="calculated_capex"> </span><br><br>
       <b>LCOW:</b> <span id="calculated_lcow"> </span><br>
-
+      <b>View map of prices higher than the calculated LCOW</b>
 </body>
 
 
