@@ -13,3 +13,5 @@ Open source software to run solar desalination models based on a site location a
 ### Support or Contact
 
 Leave a comment or issue here or on the application GitHub repository. 
+
+<input type="text" id="name" name="name"/>
