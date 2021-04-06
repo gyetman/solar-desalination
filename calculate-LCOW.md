@@ -1,6 +1,7 @@
-<form>
+
 ## Calculate LCOW
 Capacity, m3 / day
+<form>
 <input type="text" id="capacity" name="capacity"/>
 Capex, $1,000s
 
