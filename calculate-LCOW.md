@@ -1,3 +1,4 @@
+<form>
 ## Calculate LCOW
 Capacity, m3 / day
 <input type="text" id="capacity" name="capacity"/>
@@ -17,6 +18,7 @@ Plant life time, years
 
 Interest Rate, %
 
+</form>
 Unit Capex, $/m3
 
 LCOW, $/m3
