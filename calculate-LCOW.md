@@ -1,7 +1,6 @@
 
 ## Calculate LCOW
 Capacity, m3 / day
-<form>
 <input type="text" id="capacity" name="capacity"/>
 Capex, $1,000s
 
@@ -19,7 +18,6 @@ Plant life time, years
 
 Interest Rate, %
 
-</form>
 Unit Capex, $/m3
 
 LCOW, $/m3
