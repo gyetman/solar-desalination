@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,14 +16,14 @@
             var lifetime = parseInt(document.getElementById("Lifetime").value);  
             var interest = parseFloat(document.getElementById("Interest").value);
 
-            var lcow = capex*1000*interest/100*(1+interest/100)**lifetime/((1+interest/100)**lifetime-1)/(0.9*365*capacity);
-            var unit_capex = lcow+opex+lcoe*sec+lcoh*stec;
+            var annualized_capex = capex*1000*interest/100*(1+interest/100)**lifetime/((1+interest/100)**lifetime-1)/(0.9*365*capacity);
+            var lcow = annualized_capex+opex+lcoe*sec+lcoh*stec;
 
             var calc_capex = document.getElementById('calculated_capex');
-            calc_capex.innerHTML = "$" + unit_capex.toFixed(2) + "/m3";
+            calc_capex.innerHTML = "$" + annualized_capex.toFixed(2) + "/m3";
             calc_lcow = document.getElementById('calculated_lcow');
             calc_lcow.innerHTML = "$" + lcow.toFixed(2) + "/m3";
-            console.log(lcow +" "+ unit_capex);
+            console.log(lcow +" "+ annualized_capex);
 
         }
         </script>
@@ -35,25 +36,23 @@
         <input type="number" id="Capacity" name="Capacity" value=1000 oninput="calculator()"><br><br>
         <label for="Capex">Capex, $1,000s</label><br>
         <input type="number" id="Capex" name="Capex" value=2755 oninput="calculator()"><br><br>
-        <label for="Opex">Opex, $/m3</label><br>
+        <label for="Opex">Opex, $/m3 (includes replacement of modules)</label><br>
         <input type="number" id="Opex" name="Opex" value=0.3 step=0.01 oninput="calculator()"><br><br>
         <label for="LCOE">LCOE, $/kWh</label><br>
         <input type="number" id="LCOE" name="LCOE" value=0.05 step=0.01 oninput="calculator()"><br><br>
         <label for="LCOH">LCOH, $/kWh</label><br>
-        <input type="number" id="LCOH" name="LCOH" value=0.015 step=0.001 oninput="calculator()"><br><br>      
+        <input type="number" id="LCOH" name="LCOH" value=0.03 step=0.01 oninput="calculator()"><br><br>      
         <label for="SEC">SEC, kWh/m3</label><br>
         <input type="number" id="SEC" name="SEC" value=1.8 step=0.1 oninput="calculator()"><br><br>
         <label for="STEC">STEC, kWh/m3</label><br>
         <input type="number" id="STEC" name="STEC" value=55 step=1 oninput="calculator()"><br><br>   
-        <label for="Lifetime">Plant life time, years</label><br>
+        <label for="Lifetime">Plant lifetime, years</label><br>
         <input type="number" id="Lifetime" name="Lifetime" value=20 step=1 oninput="calculator()""><br><br>
         <label for="Interest">Interest Rate, %</label><br>
         <input type="number" id="Interest" name="Interest" value=4 step=0.1 oninput="calculator()"><br><br>           
       </form>
       <b>Unit Capex:</b> <span id="calculated_capex"> </span><br><br>
       <b>LCOW:</b> <span id="calculated_lcow"> </span><br>
-
-
 
 </body>
 
